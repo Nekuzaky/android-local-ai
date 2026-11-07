@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:filterTouchesWhenObscured="true"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:paddingStart="16dp"
+    android:paddingTop="12dp"
+    android:paddingEnd="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/bg_step"
+            android:importantForAccessibility="no"
+            android:scaleType="center"
+            android:src="@drawable/ic_logo" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/ScreenTitle"
+                android:text="@string/app_name" />
+
+            <TextView
+                android:id="@+id/where"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="monospace"
+                android:maxLines="1"
+                android:textColor="@color/brand_soft"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/infoButton"
+            style="@style/IconButton"
+            android:contentDescription="@string/info"
+            android:src="@drawable/ic_info" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/tabChat"
+            style="@style/TabButton"
+            android:layout_marginEnd="4dp"
+            android:text="@string/tab_chat" />
+
+        <Button
+            android:id="@+id/tabModels"
+            style="@style/TabButton"
+            android:layout_marginEnd="4dp"
+            android:text="@string/tab_models" />
+
+        <Button
+            android:id="@+id/tabPc"
+            style="@style/TabButton"
+            android:layout_marginEnd="4dp"
+            android:text="@string/tab_pc" />
+
+        <Button
+            android:id="@+id/tabSearch"
+            style="@style/TabButton"
+            android:layout_marginEnd="4dp"
+            android:text="@string/tab_search" />
+
+        <Button
+            android:id="@+id/tabVideo"
+            style="@style/TabButton"
+            android:text="@string/tab_video" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/panelChat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/chatList"
+            style="@style/TabButton"
+            android:layout_marginEnd="6dp"
+            android:text="@string/chat_list" />
+
+        <Button
+            android:id="@+id/chatNew"
+            style="@style/TabButton"
+            android:layout_marginEnd="6dp"
+            android:text="@string/chat_new" />
+
+        <Button
+            android:id="@+id/chatMode"
+            style="@style/TabButton"
+            android:layout_weight="1.5"
+            android:text="@string/mode_general" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/panelModels"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/modelsImport"
+            style="@style/TabButton"
+            android:text="@string/models_import" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/panelPc"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_weight="1"
+        android:scrollbars="none"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/ollamaAddress"
+                    style="@style/Field"
+                    android:layout_width="0dp"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    android:hint="@string/pc_ollama_hint"
+                    android:inputType="textUri|textNoSuggestions"
+                    android:maxLength="200"
+                    android:singleLine="true" />
+
+                <Button
+                    android:id="@+id/ollamaConnect"
+                    style="@style/SecondaryButton"
+                    android:layout_width="wrap_content"
+                    android:text="@string/pc_connect" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/ollamaChoose"
+                    style="@style/TabButton"
+                    android:layout_marginEnd="6dp"
+                    android:text="@string/pc_choose_model" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dp"
+                    android:text="@string/pc_use"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="13sp" />
+
+                <Switch
+                    android:id="@+id/usePc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/pc_use"
+                    android:thumbTint="@color/switch_thumb"
+                    android:trackTint="@color/switch_track" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/comfyAddress"
+                    style="@style/Field"
+                    android:layout_width="0dp"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    android:hint="@string/pc_comfy_hint"
+                    android:inputType="textUri|textNoSuggestions"
+                    android:maxLength="200"
+                    android:singleLine="true" />
+
+                <Button
+                    android:id="@+id/comfyConnect"
+                    style="@style/SecondaryButton"
+                    android:layout_width="wrap_content"
+                    android:text="@string/pc_connect" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/comfyPrompt"
+                style="@style/Field"
+                android:layout_marginTop="6dp"
+                android:gravity="top"
+                android:hint="@string/pc_prompt_hint"
+                android:inputType="textMultiLine|textCapSentences"
+                android:maxLength="2000"
+                android:maxLines="4" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/comfyChoose"
+                    style="@style/TabButton"
+                    android:layout_marginEnd="6dp"
+                    android:text="@string/pc_choose_checkpoint" />
+
+                <Button
+                    android:id="@+id/comfyGenerate"
+                    style="@style/TabButton"
+                    android:text="@string/pc_generate" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/panelSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/searchPick"
+                style="@style/TabButton"
+                android:layout_marginEnd="6dp"
+                android:text="@string/search_pick" />
+
+            <Button
+                android:id="@+id/searchRebuild"
+                style="@style/TabButton"
+                android:layout_marginEnd="6dp"
+                android:text="@string/search_rebuild" />
+
+            <Button
+                android:id="@+id/searchDelete"
+                style="@style/TabButton"
+                android:text="@string/search_delete" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/searchQuery"
+            style="@style/Field"
+            android:layout_marginTop="6dp"
+            android:hint="@string/search_hint"
+            android:imeOptions="actionSearch"
+            android:inputType="text|textNoSuggestions"
+            android:maxLength="300"
+            android:singleLine="true" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/searchRun"
+                style="@style/TabButton"
+                android:layout_marginEnd="6dp"
+                android:text="@string/search_run" />
+
+            <Button
+                android:id="@+id/searchAsk"
+                style="@style/TabButton"
+                android:text="@string/search_ask" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/panelVideo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/videoAdd"
+                style="@style/TabButton"
+                android:layout_marginEnd="6dp"
+                android:text="@string/video_add" />
+
+            <Button
+                android:id="@+id/videoClear"
+                style="@style/TabButton"
+                android:text="@string/video_clear" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/videoCommand"
+            style="@style/Field"
+            android:layout_marginTop="6dp"
+            android:gravity="top"
+            android:hint="@string/video_command_hint"
+            android:inputType="textMultiLine|textNoSuggestions"
+            android:maxLength="1000"
+            android:maxLines="3" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/videoRead"
+                style="@style/TabButton"
+                android:layout_marginEnd="6dp"
+                android:text="@string/video_read" />
+
+            <Button
+                android:id="@+id/videoAsk"
+                style="@style/TabButton"
+                android:text="@string/video_ask" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/bar"
+        style="@android:style/Widget.Material.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:layout_marginTop="6dp"
+        android:indeterminateTint="@color/brand_soft"
+        android:progressBackgroundTint="@color/surface_high"
+        android:progressTint="@color/brand_soft"
+        android:visibility="gone" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="6dp"
+        android:layout_weight="1">
+
+        <ListView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="6dp"
+            android:listSelector="@android:color/transparent"
+            android:paddingBottom="12dp"
+            android:scrollbars="none"
+            android:transcriptMode="normal" />
+
+        <TextView
+            android:id="@+id/empty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:padding="24dp"
+            android:textColor="@color/text_secondary"
+            android:textSize="15sp"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/composer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:gravity="bottom"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/chatAttach"
+            style="@style/SecondaryButton"
+            android:layout_width="wrap_content"
+            android:layout_marginEnd="6dp"
+            android:minWidth="0dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="@string/chat_attach"
+            android:visibility="gone" />
+
+        <EditText
+            android:id="@+id/chatInput"
+            style="@style/Field"
+            android:layout_width="0dp"
+            android:layout_marginEnd="6dp"
+            android:layout_weight="1"
+            android:hint="@string/chat_hint"
+            android:inputType="textMultiLine|textCapSentences"
+            android:maxLength="8000"
+            android:maxLines="5" />
+
+        <Button
+            android:id="@+id/chatSend"
+            style="@style/SecondaryButton"
+            android:layout_width="wrap_content"
+            android:minWidth="64dp"
+            android:text="@string/chat_send" />
+    </LinearLayout>
+</LinearLayout>

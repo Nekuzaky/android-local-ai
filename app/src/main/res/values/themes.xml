@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="android:Theme.Material.NoActionBar">
+        <item name="android:colorPrimary">@color/brand_start</item>
+        <item name="android:colorAccent">@color/brand_soft</item>
+        <item name="android:windowBackground">@drawable/bg_window</item>
+        <item name="android:statusBarColor">@color/background_top</item>
+        <item name="android:navigationBarColor">@color/background_bottom</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+        <item name="android:alertDialogTheme">@style/AlertTheme</item>
+    </style>
+
+    <style name="AlertTheme" parent="android:Theme.Material.Dialog.Alert">
+        <item name="android:colorAccent">@color/brand_soft</item>
+        <item name="android:windowBackground">@drawable/bg_dialog</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+    </style>
+</resources>
